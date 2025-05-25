@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# LumiDash
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  [![React](https://img.shields.io/badge/React-19+-61DAFB?logo=react)](https://react.dev/)  [![Vite](https://img.shields.io/badge/Vite-4+-646CFF?logo=vite)](https://vitejs.dev/)  [![TypeScript](https://img.shields.io/badge/TypeScript-4+-blue?logo=typescript)](https://www.typescriptlang.org/)  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3+-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**LumiDash** é a interface frontend do ecossistema *Lumi*, projetada para oferecer visualizações interativas de dados e facilitar a comunicação com modelos de linguagem de última geração (LLMs), como a Billumy. Com uma interface moderna e responsiva, o LumiDash transforma dados em insights acionáveis para usuários técnicos e não técnicos.
 
-Currently, two official plugins are available:
+## Principais Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Dashboards Interativos**: Visualizações dinâmicas e personalizáveis usando gráficos, tabelas e métricas.
+* **Integração com LLMs**: Comunicação com o backend (LumiCore) para interpretar dados com apoio de modelos de linguagem.
+* **Filtros Inteligentes**: Explore os dados com filtros intuitivos e responsivos.
+* **Experiência de Usuário Moderna**: Interface desenvolvida com foco em usabilidade e performance.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* [React](https://react.dev/)
+* [Vite](https://vitejs.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [D3.js](https://d3js.org/)
+* [Integração com API REST do LumiCore (Django)](https://github.com/devdinho/LumiCore)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/devdinho/LumiDash.git
+cd LumiDash
+
+# Rode o projeto em ambiente de desenvolvimento
+docker compose up --build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Configuração
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Crie um arquivo `.env.local` com as seguintes variáveis:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```env
+VITE_API_URL=http://localhost:8003/api
 ```
+
+## Estrutura do Projeto
+
+```
+lumidash/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/       # Comunicação com o backend
+│   ├── utils/
+│   └── main.tsx
+└── public/
+```
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).

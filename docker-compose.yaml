@@ -1,0 +1,12 @@
+services:
+
+  lumi_dash:
+    container_name: lumi_dash
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/app
+      - /app/node_modules
