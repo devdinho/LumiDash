@@ -1,0 +1,39 @@
+.home {
+  background-color: #e6e6e6;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-nav {
+  margin-bottom: 2rem;
+}
+
+.home-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.home-nav a {
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.home-nav a:hover {
+  background-color: #eee;
+}
+
+@media (min-width: 769px) {
+  .home-nav {
+    display: none;
+  }
+}
